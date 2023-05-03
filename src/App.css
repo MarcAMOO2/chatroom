@@ -1,0 +1,162 @@
+/* App container */
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+}
+
+/* Chat container */
+.messages-container {
+  margin-top: 40px;
+  height: calc(100vh - 200px); /* subtract height of header and chat input */
+  width: 90%;
+  border: 2px solid black;
+  border-radius: 10px;
+  overflow-y: scroll;
+  margin-bottom: 20px; /* add margin to avoid clipping chat input */
+}
+
+
+/* Chat messages */
+.messages {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.customUsername {
+  text-align: center;
+}
+
+.externalUser {
+  font-weight: bold;
+}
+
+.my-message {
+  align-self: flex-end;
+  background-color: #2196f3;
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+/* Input and submit button container */
+.chatInput {
+  position: fixed;
+  bottom: 0;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Input field */
+.MuiInputBase-root {
+  width: 100%;
+}
+
+/* Submit button */
+.MuiButton-root {
+  background-color: #2196f3;
+  color: #fff;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.MuiButton-root:hover {
+  background-color: #1976d2;
+}
+
+header {
+  text-align: center;
+  position: relative;
+}
+
+.scrollToBottom {
+  float: right;
+}
+
+.messages div {
+  outline: 1px solid #ddd;
+}
+
+.username {
+  line-height: 1.2;
+}
+
+/* New code */
+.my-message .username {
+  display: none;
+}
+
+.externalUser .username {
+  font-weight: normal;
+}
+
+.customUsername .username {
+  font-weight: bold;
+}
+
+.customUsername {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px;
+}
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  scroll-behavior: smooth;
+}
+
+.messages-container .username {
+  font-size: 12px;
+  color: gray;
+  margin-bottom: 5px;
+}
+
+.messages-container .message {
+  background-color: #f1f0f0;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+
+.messages-container img {
+  float: left;
+  margin-top: 15px;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+
+
+.messages-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.messages-container::-webkit-scrollbar-track {
+  background-color: #f8f8f8;
+  border-radius: 10px;
+}
+
+.messages-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ccc, #fff);
+  border-radius: 10px;
+  border: 2px solid #f8f8f8;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  outline: none;
+}
+
+.messages-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #aaa, #ddd);
+  border-color: #aaa;
+}
