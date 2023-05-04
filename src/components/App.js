@@ -1,4 +1,4 @@
-import './App.css';
+import '../App.css';
 import { React, useState, useEffect } from 'react';
 import { createClient } from "@supabase/supabase-js";
 
@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import {TextField, Button} from '@mui/material';
 
-import Login from './components/Login';
+import Login from './Login';
 
 
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvb2NqdXhvbXB0Y255amdhZ3loIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE5OTQ3NDEsImV4cCI6MTk5NzU3MDc0MX0.pSuxWo7XIjpa5uB39I4sCRy-w1DAFgbkMiIynMBOw-E";
