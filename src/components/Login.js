@@ -27,11 +27,11 @@ function Login() {
 
           setLoggedIn(true);
         } 
-        else if(event === "INITIAL_SESSION") {
-            sessionData = session;
-            console.log("User is logged in");
-            setLoggedIn(true);
-        }
+        // else if(event === "INITIAL_SESSION") {
+        //     sessionData = session;
+        //     console.log("User is logged in");
+        //     setLoggedIn(true);
+        // }
         else {
           // Clear the global session data variable
           sessionData = null;
@@ -61,45 +61,42 @@ function Login() {
 
 
     return (
+        <>
+            
+            <h1>Login to your existing account</h1>
+            <form>
+                <TextField
+                    id='email'
+                    type='email'
+                    placeholder='example@domain.com'
+                    size='large'
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}       
+                    required
+                ></TextField>
+                <p></p>
+                <TextField
+                    id='password'
+                    type='password'
+                    placeholder='Password'
+                    size='large'
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}       
+                    required
+                ></TextField>
+                <p></p>
+                <Button
+                    variant='contained'
+                    size='large'
+                    onClick={SubmitLogin}
+                    
+                >Login</Button>
 
-        <Router>
-            {isLoggedIn ? (
-                <Redirect to="/app" />
-            ) : (
-                <>
-                    <h1>Login to your existing account</h1>
-                    <form>
-                        <TextField
-                            id='email'
-                            type='email'
-                            placeholder='example@domain.com'
-                            size='large'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}       
-                            required
-                        ></TextField>
-                        <p></p>
-                        <TextField
-                            id='password'
-                            type='password'
-                            placeholder='Password'
-                            size='large'
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}       
-                            required
-                        ></TextField>
-                        <p></p>
-                        <Button
-                            variant='contained'
-                            size='large'
-                            onClick={SubmitLogin}
-                            
-                        >Login</Button>
+            </form>
 
-                    </form>
-                </>
-            )}
-        </Router>
+
+        </>
+        
     );  
 }
 
