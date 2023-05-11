@@ -160,3 +160,10 @@ header {
   background: linear-gradient(to bottom, #aaa, #ddd);
   border-color: #aaa;
 }
+
+
+.messageLoaderAwait {
+  text-align: center;
+  vertical-align: middle;
+
+}
