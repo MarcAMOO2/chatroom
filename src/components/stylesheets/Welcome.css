@@ -1,0 +1,36 @@
+/* Creating a dark smooth background*/
+.welcome body {
+    background: #2c3e50;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.welcome header {
+    text-align: center;
+    font-size: 1.2em;
+}
+.welcome header h1 {
+    font-size: 4em;
+    font-weight: 200;
+    margin-bottom: 0.2em;
+}
+
+
+.welcome .buttons {
+    width: 100px;    
+    /* Allign buttons to center*/
+    margin: 0 auto;
+    margin-top: 1em; 
+    border: 2px black solid;  
+    border: 2px black solid;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2.5px rgba(0, 0, 0, 0.29);
+    background-color: #d1d8de; 
+    text-align: center;
+}
+
+
+
+

@@ -18,9 +18,20 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
      <Switch>
+     <Route
+        exact
+        path="/"
+        render={() => {
+            return (
+              <Redirect to="/Home" /> 
+            )
+        }}
+      />
+      <Route path='/Home' component={Welcome} />
       <Route path="/login" component={Login}/>
       <Route path="/chatroom/global" component={App }/>
       <Route path="/register" component={Register }/>
+      <Route path="/checkmail" component={CheckMail} />
     </Switch>
   
   </Router>,

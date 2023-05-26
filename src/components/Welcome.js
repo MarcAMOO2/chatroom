@@ -1,51 +1,62 @@
-import React from "react";
+import React, {useState} from "react";
 import { Button } from '@mui/material'
 import '@mui/icons-material';
+import Box from '@mui/material/Box';
+import Rating from '@mui/material/Rating';
+import Typography from '@mui/material/Typography';
 
-
-import { BrowserRouter as Router, Route, Redirect, Link, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory } from 'react-router-dom';
 
 import Register from "./Register";
 import Login from "./Login";
 
+import "./stylesheets/Welcome.css";
+
 
 function Welcome() {
+    const history = useHistory();
+
+
+    const CreateAnAccount = () => {
+        console.log("Requested to create a new account");
+        setTimeout(() => {
+            history.push("/register");
+        }, 1000);
+    }
     const RedirectLogin = () => {
-        console.log("Redirect to login page")
-        return (
-            <>
-                <Router>
-                    <Route path="./components/login" component={Login}></Route>
-                </Router>
-            </>
-        )
+        console.log("Requested to login to an account");
+        history.push("/login");
+
     }
 
-    const RedirectSignup = () => {
-        console.log("Redirect to signup page");
-    }
-
+    
     return (
         <>
-            <Router>
-                <Route path='/login' element={<Login />} />
-            </Router>
+        <div className="welcome">
             <header>
                 <h1>Chatta</h1>
-                <h3>To begin chatting, either login or signup!</h3>
-            </header>
-            <hr>
-            </hr>
-            <div className="accountAuth">
+                <span>Fast and Reliable Live Chatroom! For Free; Forever</span>
+
+                <div className="buttons">
                 <Button
-                    variant="contained"
+                    color="primary"
+                    size="large"
+                    variant="filledTonal"
+                    onClick={CreateAnAccount}
+                    className="createAccountButton"
+                >Create an account</Button>
+                </div>
+                <div className="buttons">
+                <Button
+                    color="primary"
+                    size="large"
+                    variant="filledTonal"
                     onClick={RedirectLogin}
+                    className="loginToAccountBtn"
                 >Login</Button>
-                <Button 
-                    variant="contained"
-                    onClick={RedirectSignup}
-                >Signup</Button>
-            </div>
+                </div>
+            </header>
+        </div>
         </>
     );
 }

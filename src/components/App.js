@@ -28,8 +28,6 @@ function App() {
     //-----------------------------------------------
     //Checking if the message has content, otherwise, continue
     //-----------------------------------------------
-      document.getElementById("message").value = "";
-      
       //Client Side displaying message for the user
       // var messageContainer = document.getElementById("messages");
       // let el = document.createElement('div');
@@ -51,6 +49,9 @@ function App() {
       .insert({ user_sent: username, content: message }); // sends the username and message content along with the time sent
       console.log('data:', data);
       console.log('error:', error); //Debugging the code
+
+      document.getElementById("message").value = "";
+      
   } //const function closer
 
   //-----------------------------------------------------
@@ -58,6 +59,26 @@ function App() {
   //-----------------------------------------------------
   
   useEffect(() => {
+    var emailCookie = setUsername(sessionStorage.getItem("user"));
+    if(sessionStorage.length == 0) {
+      setUsername("Anonymous"); //no username identifier
+    }
+    const getUserProfileByEmail = async () => {
+      const { data, error } = await supabase
+        .from("users")
+        .select("username")
+        .eq('email', emailCookie)
+        .single()
+      if(error) {
+        console.log("Failed to fetch user data - Email Fetch - ", error);
+        return null;
+      }
+      console.log("Sucessfully pulled data from user profile: ", data);
+      return data;
+    };
+    getUserProfileByEmail();
+
+
     const messageCall = setInterval(async () => {
       try {
         const { data, error } = await supabase
@@ -96,23 +117,8 @@ function App() {
   return (
     <>
     <header>
-      <h1>Currently Viewing as: Guest (Anonymous)</h1>
-      <p>Set your name to display when you send messages</p>
+      <h1>Currently Viewing as: {sessionStorage.getItem("user")}</h1>
     </header>
-    <Link to='/components/login'>Login</Link>
-      <div className="customUsername">
-        <TextField
-          type='text'
-          placeholder='Set your username'
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        ></TextField>
-        <Button 
-          variant='outlined' 
-          size='large'
-          >Save</Button>
-      </div>
 
       <div className="messages-container" id='messages-container'>
         <div className="messages" id='messages'>
@@ -140,8 +146,9 @@ function App() {
           fullWidth
           ></TextField>
         <Button 
-          variant='outlined'
+          variant='contained'
           size='large'
+
           onClick={SubmitMessage}
         >sEND</Button>
       </div>

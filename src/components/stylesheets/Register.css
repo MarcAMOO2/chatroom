@@ -1,0 +1,40 @@
+.register .signUpForm {
+    background-color: aliceblue;
+}
+
+body  {
+    background-color: rgb(220, 228, 236);
+}
+
+.register .signUpForm {
+    border: 3.5px black solid;
+    box-shadow: 2px 2px 2.5px rgba(0, 0, 0, 0.29);
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 33%;
+    width: 500px;
+    height: 500px;
+    padding-top: 50px;
+    padding: 10px;
+}
+
+.register .signUpForm Button {
+    margin-top: 40px;
+    padding: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.register ::-webkit-input-placeholder {
+    font-weight: 400;
+    color: black;
+    opacity: 90;
+}
+
+.register :-moz-placeholder {
+    text-align: center;
+}
+
+.register .header {
+    text-align: center;
+}

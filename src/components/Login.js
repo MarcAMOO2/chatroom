@@ -5,6 +5,7 @@ import {Button, TextField, Alert} from '@mui/material';
 import { createClient } from "@supabase/supabase-js";
 
 import App from "./App";
+import './stylesheets/Login.css';
 
 import { BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory } from 'react-router-dom';;
 
@@ -62,7 +63,8 @@ function Login() {
 
             console.log("Logged in ", data);
             console.log(data.user.email);
-            localStorage.setItem("user", data.user.email);
+            sessionStorage.setItem("user", data.user.user_metadata.username);
+            sessionStorage.setItem("userEmail", data.user.email);
             
             //Saving to cookies/localstorage
 
@@ -92,7 +94,8 @@ function Login() {
 
 
     return (
-        <>    
+        <> 
+        <div className="login">   
         <Router>
             <Switch>
                 <Route path="/chatroom/global" element={<App setUsername={setUsername} />} />
@@ -128,6 +131,7 @@ function Login() {
             >Login</Button>
 
         </form>
+        </div>
         </>     
     );  
 }
