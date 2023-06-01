@@ -1,7 +1,7 @@
 {
   "name": "chatbeta",
   "version": "0.1.0",
-  "homepage": "/home",
+  "homepage": ".",
   "private": false,
   "dependencies": {
     "@chakra-ui/react": "^2.6.0",
