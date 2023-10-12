@@ -9,8 +9,8 @@ import {TextField, Button} from '@mui/material';
 import Login from './Login';
 
 
-const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvb2NqdXhvbXB0Y255amdhZ3loIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODE5OTQ3NDEsImV4cCI6MTk5NzU3MDc0MX0.pSuxWo7XIjpa5uB39I4sCRy-w1DAFgbkMiIynMBOw-E";
-const SUPABASE_URL = "https://foocjuxomptcnyjgagyh.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN6YmVzYW91emltbnR1Y3Rib29rIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTQ1NjI3OTksImV4cCI6MjAxMDEzODc5OX0.DjE8FbRZXkJwStakhHhRgYsUbIU2gInMdC_ASLb1G7c";
+const SUPABASE_URL = "https://czbesaouzimntuctbook.supabase.co";
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 
